@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<h2>Sneakers</h2>
+<div class="row">
+    {% for sneaker in sneakers %}
+    <div class="col">
+        <div class="card" style="width: 16rem;">
+            <!--<img src="{{ product.image_url }}" class="card-img-top" alt="...">-->
+            <img src="{{ sneaker.image_url }}" class="rounded" alt="..." height="200">
+            <div class="img-responsive">
+                <h5 class="card-title">{{ sneaker.name }}</h5>
+                <p class="card-text">GH{{sneaker.price}}</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+                <div class="d-grid gap-3">
+                    <div class="p-2 bg-light border"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
